@@ -46,6 +46,9 @@ dependencies {
 
 tasks.register<proguard.gradle.ProGuardTask>("proguard") {
     verbose()
+//    keepdirectories()// By default, directory entries are removed.
+    ignorewarnings()
+    target("11")
 
     // Alternatively put your config in a separate file
     // configuration("config.pro")
@@ -95,8 +98,6 @@ tasks.register<proguard.gradle.ProGuardTask>("proguard") {
 //    repackageclasses("")
 
     printmapping("build/proguard-mapping.txt")
-
-    target("11")
 
     adaptresourcefilenames()
     optimizationpasses(9)
