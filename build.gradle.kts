@@ -106,12 +106,12 @@ tasks.register<proguard.gradle.ProGuardTask>("proguard") {
     renamesourcefileattribute("SourceFile")
     keepattributes("Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod")
 
-    keep("""class org.jetbrains.plugins.template.MyBundle
-    """.trimIndent())
-
-    keep("""class beansoft.mykeep.**
-    """.trimIndent())
-    keep("class beansoft.mykeep.**{*;}")
+//    keep("""class org.jetbrains.plugins.template.MyBundle
+//    """.trimIndent())
+//
+//    keep("""class beansoft.mykeep.**
+//    """.trimIndent())
+//    keep("class beansoft.mykeep.**{*;}")
 }
 
 
