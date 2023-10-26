@@ -5,6 +5,7 @@ import com.intellij.diagnostic.LoadingState;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.ui.GraphicsConfig;
 import com.intellij.openapi.util.*;
 import com.intellij.openapi.util.registry.Registry;
@@ -69,6 +70,8 @@ import java.util.List;
 import java.util.*;
 import java.util.regex.Pattern;
 
+import com.intellij.openapi.editor.colors.EditorColors;
+
 /**
  * Port some features from 212 and fix some internal method usage.
  * @author beansoft
@@ -89,6 +92,8 @@ public class UIUtilEx {
         if (Boolean.getBoolean("java.awt.headless") || component.isShowing()) {
             return true;
         }
+
+        ColorKey colorKey = EditorColors.SEPARATOR_ABOVE_COLOR;
 
         while (component != null) {
             JComponent jComponent = component instanceof JComponent ? (JComponent)component : null;
